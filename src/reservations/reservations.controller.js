@@ -11,7 +11,7 @@ async function resExists(req, res, next) {
   const reservation = await resService.read(reservationId);
    res.locals.reservation = reservation;
   return (reservation) ? next() : 
-    next({ status: 404, message: `${r} ${reservationId} cannot be found` });
+    next({ status: 404, message: `${r} ${reservationId} cannot be found.` });
 }
 
 //Checks if the reservation has the valid field/parameters. Return appropriate error
